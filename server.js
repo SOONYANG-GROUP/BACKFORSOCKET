@@ -17,7 +17,9 @@ instrument(io, {
 
 io.on("connection", socket => {
     socket.onAny((event) => {
-        console.log(`[${socket.id}:${socket.rooms}]: event=${event}`);
+        console.log('---------------------------------')
+        console.log(`[${socket.id}]: event=${event}`);
+        console.log('---------------------------------')
     });
     socket.on("join_room", (roomName) => {
         socket.join(roomName);
